@@ -7,7 +7,6 @@ const app = express();
 // If we are in development it is false, default to 3000
 const PORT = process.env.PORT || 3000;
 
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -15,6 +14,9 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.get('/notes', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public', 'notes.html'))
+})
 
 
 app.use(express.static('public'));
