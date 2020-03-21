@@ -57,6 +57,7 @@ var handleNoteSave = function() {
   };
 
   saveNote(newNote).then(function(data) {
+    console.log("asd");
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -83,7 +84,9 @@ var handleNoteDelete = function(event) {
 
 // Sets the activeNote and displays it
 var handleNoteView = function() {
+
   activeNote = $(this).data();
+
   renderActiveNote();
 };
 
@@ -105,6 +108,7 @@ var handleRenderSaveBtn = function() {
 
 // Render's the list of note titles
 var renderNoteList = function(notes) {
+  console.log(notes);
   $noteList.empty();
 
   var noteListItems = [];
