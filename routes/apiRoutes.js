@@ -50,7 +50,7 @@ router.delete("/notes/:id", (req, res) => {
             if (err) {
                 console.log(err);
             }
-            res.json();
+            res.json({ success: true });
         })
     })
 })
