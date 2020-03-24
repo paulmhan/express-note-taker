@@ -1,10 +1,11 @@
 # Express Note Taker
 A note taking application designed to write, save, and delete notes, written to and retrieved from a backend JSON file. 
 
+## Uses 
+This application can be used for individuals who need help organizing thoughts and keeping track of tasks. 
+
 ## Example Usage
 ![](/gif/sample_usage.gif)
-
-
 
 ## Built With
 
