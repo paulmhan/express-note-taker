@@ -5,7 +5,7 @@ const fs = require("fs");
 //get route
 //when url hits /notes, get the data from the db.json file and send it back
 router.get("/notes", (req, res) => {
-    fs.readFile(db, "utf8", function (err, data) {
+    fs.readFile(db, "utf8", (err, data) => {
         if (err) {
             console.log(err);
         }
@@ -20,14 +20,14 @@ router.get("/notes", (req, res) => {
 router.post("/notes", (req, res) => {
     //req.body only when posting, undefined until we use body parser
     let newNote = req.body;
-    fs.readFile(db, "utf8", function (err, data) {
+    fs.readFile(db, "utf8", (err, data) => {
         if (err) {
             console.log(err);
         }
         let json = JSON.parse(data);
         newNote.id = json.length + 1;
         json.push(newNote);
-        fs.writeFile(db, JSON.stringify(json), function (err) {
+        fs.writeFile(db, JSON.stringify(json), err => {
             if (err) {
                 console.log(err);
             }
@@ -46,11 +46,11 @@ router.delete("/notes/:id", (req, res) => {
         }
         const currentNotes = JSON.parse(data);
         const newNotes = currentNotes.filter(note => note.id != noteId);
-        fs.writeFile(db, JSON.stringify(newNotes), function (err) {
+        fs.writeFile(db, JSON.stringify(newNotes), err => {
             if (err) {
                 console.log(err);
             }
-            res.json(db);
+            res.json();
         })
     })
 })
