@@ -63,6 +63,9 @@ module.exports = router;
 
 
 //Musa:
-//req.body
+//req.body vs req.params
 //line34
 //sending whatever in res.json();
+//axios vs ajax vs express vs fetch
+//is axios front end and express backend? 
+//framework vs library
